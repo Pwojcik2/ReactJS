@@ -1,19 +1,22 @@
-import { SplitScreen } from "./components/split-screen";
-
-const LeftSideComp = ({ title }) => {
-  return <h2 style={{ backgroundColor: "crimson" }}>{title}</h2>;
-};
-
-const RightSideComp = ({ title }) => {
-  return <h2 style={{ backgroundColor: "burlywood" }}>{title}</h2>;
-};
+import { RegularList } from "./components/lists/Regular";
+import { authors } from "./data/authors";
+import { SmallAuthorListItem } from "./components/authors/SmallListItems";
+import { LargeAuthorListItem } from "./components/authors/LargeListItems";
 
 function App() {
   return (
-    <SplitScreen leftWidth={1} rightWidth={3}>
-      <LeftSideComp title={"I am left"} />
-      <RightSideComp title={"I am right"} />
-    </SplitScreen>
+    <>
+      <RegularList
+        items={authors}
+        sourceName={"author"}
+        ItemComp={SmallAuthorListItem}
+      />
+      <RegularList
+        items={authors}
+        sourceName={"author"}
+        ItemComp={LargeAuthorListItem}
+      />
+    </>
   );
 }
 
