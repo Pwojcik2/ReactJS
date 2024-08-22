@@ -1,7 +1,13 @@
+// import { CurrentUserLoader } from "./Section3/components/current-user-loader";
+import { UserInfo } from "./Section3/components/user-info";
+import { UserLoader } from "./Section3/components/user-loader";
+
 function App() {
   return (
     <>
-      <h1>Start</h1>
+      <UserLoader userId={"3"}>
+        <UserInfo />
+      </UserLoader>
     </>
   );
 }
